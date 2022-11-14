@@ -6,7 +6,7 @@ import zoomer from "chartjs-plugin-zoom";
 Chart.register(...registerables, dragable, zoomer);
 
 export const ChartGraph = ({ data, configOptions }) => {
-  const [lineData, setLineData] = useState(data);
+  const [lineData] = useState(data);
   return (
     <div style={{ backgroundColor: "white", margin: 20 }}>
       <Line data={lineData} options={configOptions} width={1000} height={500} />

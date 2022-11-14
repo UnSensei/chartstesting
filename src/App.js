@@ -57,9 +57,8 @@ const graphJSON = [
 ];
 
 function App() {
-  const [updater, setUpdater] = useState(false);
   const [currentRow, setCurrentRow] = useState(null);
-  const [labels, setLabels] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8]);
+  const [labels] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8]);
 
   const getColor = (orderType) => {
     if (orderType === "Single") {
@@ -151,10 +150,6 @@ function App() {
     dragData: true,
   };
 
-  const updateRunner = () => {
-    setUpdater(!updater);
-  };
-
   useEffect(() => {
     const lineData = graphJSON.map((item, index) => {
       return {
@@ -171,7 +166,6 @@ function App() {
     });
 
     setDataSet(lineData);
-    updateRunner();
   }, []);
 
   const showQuantity = (val) => {
